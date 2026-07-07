@@ -24,13 +24,39 @@ const LEAVE_MS = 900;
 const RING_R = 58;
 const RING_C = 2 * Math.PI * RING_R;
 
+const isCrawler = () => {
+  if (typeof navigator === "undefined") return false;
+
+  const ua = navigator.userAgent.toLowerCase();
+
+  return [
+    "googlebot",
+    "bingbot",
+    "slurp",          // Yahoo
+    "duckduckbot",
+    "baiduspider",
+    "yandexbot",
+    "facebookexternalhit",
+    "twitterbot",
+    "linkedinbot",
+    "applebot"
+  ].some(bot => ua.includes(bot));
+};
+
 export default function Loader() {
   // stages: checking-session -> lock -> unlocking -> boot -> leaving -> (hidden)
-  const [stage, setStage] = useState(() =>
-    typeof window !== 'undefined' && localStorage.getItem(SESSION_KEY) === 'true'
-      ? 'checking-session'
-      : 'lock'
-  );
+  const [stage, setStage] = useState(() => {
+    if (typeof window === "undefined") return "lock";
+
+    // Skip login for search engine crawlers
+    if (isCrawler()) {
+      return "boot";
+    }
+
+    return localStorage.getItem(SESSION_KEY) === "true"
+      ? "checking-session"
+      : "lock";
+  });
   const [hidden, setHidden] = useState(false);
   const [percent, setPercent] = useState(0);
   const rafRef = useRef(null);
