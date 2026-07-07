@@ -6,7 +6,6 @@
 ![Vite](https://img.shields.io/badge/Vite-Latest-646CFF?style=for-the-badge&logo=vite)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript)
 ![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?style=for-the-badge&logo=css3)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </p>
 
@@ -278,11 +277,11 @@ Computer Science Engineering Student
 
 Technical Enthusiast • Full Stack Developer • AI Enthusiast
 
-📧 Email: your-email@example.com
+📧 Email: rohangiri1884@gmail.com
 
-🌐 LinkedIn: https://linkedin.com/in/yourprofile
+🌐 LinkedIn: https://www.linkedin.com/in/rohan-giri-264a44302
 
-💻 GitHub: https://github.com/yourusername
+💻 GitHub: https://github.com/rohangiriportfolio
 
 ---
 
